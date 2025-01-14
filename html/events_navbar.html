@@ -3,96 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Language Switcher</title>
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-}
-
-.nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
 }
 
-.nav-list li {
-    position: relative;
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
+h2 {
+    color: #333;
 }
 
-.nav-list a:hover {
-    background-color: #575757;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 150px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+form {
+    margin-top: 20px;
     text-align: left;
 }
 
-.dropdown-content a {
-    color: black;
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
     padding: 10px 15px;
-    text-decoration: none;
-    display: block;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+button:hover {
+    background-color: #218838;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+#responseMessage {
+    margin-top: 15px;
+    font-size: 14px;
+    color: green;
 }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li class="dropdown">
-                <a href="#" id="flowchartItem">Flowchart</a>
-                <div class="dropdown-content">
-                    <a href="#" onclick="changeLanguage('Flowchart', 'Diagrama de Flujo')">Español</a>
-                    <a href="#" onclick="changeLanguage('Flowchart', 'Organigramme')">Français</a>
-                    <a href="#" onclick="changeLanguage('Flowchart', 'Flussdiagramm')">Deutsch</a>
-                    <a href="#" onclick="changeLanguage('Flowchart', 'Diagramma di Flusso')">Italiano</a>
-                </div>
-            </li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <h2>Event Registration</h2>
+        <form id="eventForm">
+            <!-- Personal Details -->
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
 
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </fieldset>
+
+            <!-- Event Details -->
+            <fieldset>
+                <legend>Event Preferences</legend>
+                <label for="eventType">Event Type</label>
+                <select id="eventType" name="eventType" required>
+                    <option value="" disabled selected>Select an event</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="networking">Networking Event</option>
+                    <option value="conference">Conference</option>
+                </select>
+
+                <label for="attendees">Number of Attendees</label>
+                <input type="number" id="attendees" name="attendees" placeholder="Enter number" min="1" required>
+
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" name="time" required>
+            </fieldset>
+
+            <!-- Additional Information -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="comments">Comments or Special Requests</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional information"></textarea>
+            </fieldset>
+
+            <button type="submit">Register</button>
+        </form>
+        <p id="responseMessage"></p>
+    </div>
     <script>
-        function changeLanguage(originalText, translatedText) {
-    const flowchartItem = document.getElementById('flowchartItem');
-    const currentText = flowchartItem.textContent;
+        document.getElementById('eventForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from refreshing the page
 
-    if (currentText === originalText || currentText !== translatedText) {
-        flowchartItem.textContent = translatedText;
-    } else {
-        flowchartItem.textContent = originalText; // Reset to default if needed
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const eventType = document.getElementById('eventType').value;
+    const attendees = document.getElementById('attendees').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const comments = document.getElementById('comments').value.trim();
+
+    const responseMessage = document.getElementById('responseMessage');
+
+    // Validate mandatory fields
+    if (!fullName || !email || !phone || !eventType || !attendees || !date || !time) {
+        responseMessage.style.color = "red";
+        responseMessage.textContent = "Please fill in all required fields.";
+        return;
     }
-}
-    </script>    
+
+    // Display success message
+    responseMessage.style.color = "green";
+    responseMessage.textContent = `Thank you, ${fullName}, for registering for the ${eventType}! We will contact you at ${email}.`;
+
+    // Clear the form
+    document.getElementById('eventForm').reset();
+});
+    </script>
 </body>
 </html>

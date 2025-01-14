@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Language Switcher</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.nav-list a:hover {
+    background-color: #575757;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li class="dropdown">
+                <a href="#" id="flowchartItem">Flowchart</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="changeLanguage('Flowchart', 'Diagrama de Flujo')">Español</a>
+                    <a href="#" onclick="changeLanguage('Flowchart', 'Organigramme')">Français</a>
+                    <a href="#" onclick="changeLanguage('Flowchart', 'Flussdiagramm')">Deutsch</a>
+                    <a href="#" onclick="changeLanguage('Flowchart', 'Diagramma di Flusso')">Italiano</a>
+                </div>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function changeLanguage(originalText, translatedText) {
+    const flowchartItem = document.getElementById('flowchartItem');
+    const currentText = flowchartItem.textContent;
+
+    if (currentText === originalText || currentText !== translatedText) {
+        flowchartItem.textContent = translatedText;
+    } else {
+        flowchartItem.textContent = originalText; // Reset to default if needed
+    }
+}
+    </script>    
+</body>
+</html>
