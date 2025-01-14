@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abu Dhabi Sports Council</title>
+    <style>
+        body {
+                margin: 0;
+                font-family: sans-serif;
+                }
+        header {
+                background-color: #f0f0f0;
+                padding: 15px 0;
+                }  
+        .container {
+                max-width: 960px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                }
+        nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                }
+        nav ul li {
+                margin-right: 20px;
+                }
+
+        nav ul li a {
+                text-decoration: none;
+                color: #333;
+                }
+        .logo img {
+                width: 150px;
+                    }
+        .right-section {
+                display: flex;
+                align-items: center;
+                    }
+        .right-section a {
+                text-decoration: none;
+                color: #333;
+                margin-right: 20px;
+                }
+        .language-selector, .search-icon, .menu-icon {
+                margin-right: 15px;
+                }
+        .language-selector img {
+                margin-left: 5px;
+                }
+        /* Responsive design (optional) */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                }
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+                }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Club & Federation</a></li>
+                    <li><a href="#">Media Center</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/R.556cfcb4c18723c2415219e4bb6fe87a?rik=X4rVEN9%2ffE3fSw&riu=http%3a%2f%2fwww.emiratesbowling.com%2fwp-content%2fuploads%2f2014%2f09%2fADSC_BM_DUAL_V2_RGB.jpg&ehk=2gwXbxlXKTK%2bKLUuVyDZ5fUMPJ3yJIn3AKMaWUFIJgs%3d&risl=&pid=ImgRaw&r=0" alt="Abu Dhabi Sports Council Logo" />
+            </div>
+            <div>
+                <a href="#">Register / Login</a>
+            </div>
+            <div class="right-section">
+                <a href="#">Partner Registration</a>
+                <div class="language-selector">
+                    <span>English</span>
+                </div>
+                <div class="search-icon">
+                    <img src="search-icon.svg" alt="Search Icon">
+                </div>
+                <div class="menu-icon">
+                    <img src="menu-icon.svg" alt="Menu Icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <form action="/action_page.php">
+        <label for="Heading1">Heading1</label>
+        <input type="text" id="featured_event" value="Abu Dhabi"><br>
+        <label for="Heading2">Heading2</label>
+        <input type="text" id="featured_event" value="Tennis"><br>
+        <label for="Heading3">Heading3</label>
+        <input type="text" id="featured_event" value="Championship"><br>
+        <input type="text-area" id="featured_event" value="Enter the description of the event"><br>
+        <button type="button">Learn More</button>
+        <div class="row">
+            <div class="column">
+                <label for="imageUpload">Choose an image to upload:</label>
+                <input type="file" id="imageUpload" name="image" accept="image/*">
+                <input type="submit" value="Upload Image">        
+            </div>
+        </div>
+        <label for="Heading4">Heading4</label>
+        <input type="text" id="featured_event" value="All Categories"><br><br>
+
+        <input type="button" id="featured_event" value="Global Events">
+        <input type="button" id="featured_event" value="Professional Events">
+        <input type="button" id="featured_event" value="Amateur Events">
+        <input type="button" id="featured_event" value="Community Events">
+    </form>
+
+    <form>
+        <label for="Heading1">Event Type</label>
+        <input type="text" id="featured_event" value="Global Events"><br>
+        <label for="Heading2">Tournament Name</label>
+        <input type="text" id="featured_event" value="Basketball Tournament"><br>
+        <label for="Description">Description</label>
+        <input type="text-area" id="featured_event" value="There are many variations of passages of Lorem Ipsum available."><br>
+        <label for="Date">Date</label>
+        <input type="date" id="featured_event" value="2024-02-15"><br>
+        <label for="Location">Location</label>
+        <input type="text" id="featured_event" value="Alwathbha Football Complex"><br>
+        <input type="button" value="Know More">
+        <div class="column">
+            <label for="imageUpload">Choose an image to upload:</label>
+            <input type="file" id="imageUpload" name="image" accept="image/*">
+            <input type="submit" value="Upload Image">        
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
