@@ -12,6 +12,7 @@
         header {
                 background-color: #f0f0f0;
                 padding: 15px 0;
+                text-align: center;
                 }  
         .container {
                 max-width: 960px;
@@ -63,6 +64,14 @@
                 margin-bottom: 10px;
                 }
         }
+        .form_body {
+            text-align: center;
+            margin: 10px auto;
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }        
     </style>
 </head>
 
@@ -97,23 +106,23 @@
         </div>
     </header>
 
-    <form action="/action_page.php">
-        <label for="Heading1">Heading1</label>
-        <input type="text" id="featured_event" value="Abu Dhabi"><br>
-        <label for="Heading2">Heading2</label>
-        <input type="text" id="featured_event" value="Tennis"><br>
-        <label for="Heading3">Heading3</label>
-        <input type="text" id="featured_event" value="Championship"><br>
-        <input type="text-area" id="featured_event" value="Enter the description of the event"><br>
-        <button type="button">Learn More</button>
-        <div class="row">
-            <div class="column">
-                <label for="imageUpload">Choose an image to upload:</label>
-                <input type="file" id="imageUpload" name="image" accept="image/*">
-                <input type="submit" value="Upload Image">        
-            </div>
-        </div>
-        <label for="Heading4">Heading4</label>
+    <form action="/action_page.php" class="form_body">
+        <label for="Heading1">Heading1:&nbsp;&nbsp;</label>
+        <input type="text" id="featured_event" value="Abu Dhabi"><br><br>
+        <label for="Heading2">Heading2:&nbsp;&nbsp;</label>
+        <input type="text" id="featured_event" value="Tennis"><br><br>
+        <label for="Heading3">Heading3:&nbsp;&nbsp;</label>
+        <input type="text" id="featured_event" value="Championship"><br><br>
+        <label for="Description" id="Description" value="Description">Description:&nbsp;</label>
+        <textarea id="featured_event" name="Description" value ="Enter the description of the event" rows="1" cols="20"></textarea><br><br>
+        <button type="button">Learn More</button><br><br>
+        </form>
+
+    <form action="/action_page.php" class="form_body">
+        <label for="imageUpload">Choose an image to upload:&nbsp;&nbsp;</label>
+        <input type="file" id="imageUpload" name="image" accept="image/*"><br><br>
+        <button type="submit">Upload Image</button><br><br>
+        <label for="Heading4">Heading4:&nbsp;&nbsp;</label>
         <input type="text" id="featured_event" value="All Categories"><br><br>
 
         <input type="button" id="featured_event" value="Global Events">
@@ -122,21 +131,21 @@
         <input type="button" id="featured_event" value="Community Events">
     </form>
 
-    <form>
-        <label for="Heading1">Event Type</label>
-        <input type="text" id="featured_event" value="Global Events"><br>
-        <label for="Heading2">Tournament Name</label>
-        <input type="text" id="featured_event" value="Basketball Tournament"><br>
-        <label for="Description">Description</label>
-        <input type="text-area" id="featured_event" value="There are many variations of passages of Lorem Ipsum available."><br>
-        <label for="Date">Date</label>
-        <input type="date" id="featured_event" value="2024-02-15"><br>
-        <label for="Location">Location</label>
-        <input type="text" id="featured_event" value="Alwathbha Football Complex"><br>
-        <input type="button" value="Know More">
+    <form action="/action_page.php" class="form_body">
+        <label for="Heading1">Event Type:&nbsp;&nbsp;</label>
+        <input type="text" id="featured_event" value="Global Events"><br><br>
+        <label for="Heading2">Tournament Name:&nbsp;&nbsp;</label>
+        <input type="text" id="featured_event" value="Basketball Tournament"><br><br>
+        <label for="Description">Description:&nbsp;&nbsp;</label>
+        <textarea id="featured_event" name="Description" value ="Enter the description of the event" rows="1" cols="10"></textarea><br><br>
+        <label for="Date">Date:</label>
+        <input type="date" id="featured_event" value="2024-02-15"><br><br>
+        <label for="Location">Location:</label>
+        <input type="text" id="featured_event" value="Alwathbha Football Complex"><br><br>
+        <input type="button" value="Know More"><br><br>
         <div class="column">
             <label for="imageUpload">Choose an image to upload:</label>
-            <input type="file" id="imageUpload" name="image" accept="image/*">
+            <input type="file" id="imageUpload" name="image" accept="image/*"><br><br>
             <input type="submit" value="Upload Image">        
         </div>
     </form>
